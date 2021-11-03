@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"io/ioutil"
 	"math"
 	"os"
 	"strconv"
@@ -90,6 +91,8 @@ func main() {
 	for _, result := range results[maxValue] {
 		outputResult(result, g.Width, g.Height)
 	}
+
+	ioutil.WriteFile("output.txt", []byte(fmt.Sprint(maxValue)), 0644)
 
 }
 
